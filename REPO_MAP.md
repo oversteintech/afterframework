@@ -1,47 +1,40 @@
-# oversteintech — repo map (ready for Super Apps)
-
-Last update: 2026-07-19
+# oversteintech — repo map
 
 ## Brand stack
 
 ```
-Ayhan Uzundal          → ayhanuzundal.com.tr
-  └── AfterArtificial  → afterartificial.com
-        └── Super* Apps
-              └── After Framework  → afterframework.com
-                    └── packages   → github.com/oversteintech/supercore
-                          └── Built by Overstein Labs → overstein.com
+Ayhan Uzundal → AfterArtificial → Super* Apps
+                      └── After Framework (afterframework.com)
+                            └── SuperCore packages (standard APIs)
+                                  └── Overstein Labs
 ```
 
-## Live sites (Vercel)
+## Sites
 
-| Domain | Project | Repo |
-|--------|---------|------|
-| afterframework.com | afterframework | oversteintech/afterframework |
-| afterartificial.com | afterartificial-web | oversteintech/afterartificial-web |
-| overstein.com | overstein-web | oversteintech/overstein-web |
-| ayhanuzundal.com.tr | ayhan-portfolio | oversteintech/ayhan-portfolio |
+| Domain | Repo |
+|--------|------|
+| afterframework.com | afterframework |
+| afterartificial.com | afterartificial-web |
+| overstein.com | overstein-web |
+| ayhanuzundal.com.tr | ayhan-portfolio |
 
-## Flutter / packages
+## Flutter
 
-| Repo | Role | Status |
-|------|------|--------|
-| **supercore** | `after_core` + `after_design_system` | ✅ Source of truth |
-| **supergarage** | Flagship Super App | ✅ Consumes `../supercore` |
-| **superhealth** | Next Super App scaffold | ✅ Composition root + smoke tests |
+| Repo | Role |
+|------|------|
+| **supercore** | Standard APIs: after_core + after_design_system |
+| **supergarage** | Flagship Super App |
+| **superhealth** | Super App scaffold |
+| **supernews** | Super App scaffold |
+| **supersports** | Super App scaffold |
 
-## Local workspace layout
+## Local layout
 
 ```text
 HANTURAI/
   supercore/
   supergarage/
   superhealth/
+  supernews/
+  supersports/
 ```
-
-## Next Super Apps
-
-1. Clone `supercore` as sibling
-2. `flutter create` + depend on `../supercore/packages/*`
-3. Copy composition pattern from SuperHealth / SuperGarage
-4. Follow [SUPER_APP_CHECKLIST](https://github.com/oversteintech/supercore/blob/main/SUPER_APP_CHECKLIST.md)

@@ -15,6 +15,8 @@ export const links = {
   githubFramework: "https://github.com/oversteintech/afterframework",
   githubSuperCore: "https://github.com/oversteintech/supercore",
   githubSuperHealth: "https://github.com/oversteintech/superhealth",
+  githubSuperNews: "https://github.com/oversteintech/supernews",
+  githubSuperSports: "https://github.com/oversteintech/supersports",
   superGarage: "https://www.afterartificial.com/#products",
 };
 
@@ -44,9 +46,9 @@ export const modules = [
 export const packages = [
   {
     name: "after_core",
-    role: "Engine",
+    role: "Engine · standard APIs",
     description:
-      "Auth ports, Dio HTTP, secure storage, Riverpod providers, analytics, flags, remote config, AI BYOK, notifications, deep links, premium entitlements, utilities.",
+      "Shared Super App APIs: AppPlatformManifest, AfterStandardOverrides, auth/analytics/push/entitlement ports, Dio HTTP, storage, flags, remote config, AI BYOK, notifications, deep links.",
   },
   {
     name: "after_design_system",
@@ -54,6 +56,13 @@ export const packages = [
     description:
       "Ice-on-graphite tokens, typography, spacing, motion, buttons, cards, dialogs, nav, inputs, charts, empty and loading states.",
   },
+];
+
+export const superAppFamily = [
+  { name: "SuperGarage", status: "Flagship", href: "https://github.com/oversteintech/supergarage" },
+  { name: "SuperHealth", status: "Scaffold", href: "https://github.com/oversteintech/superhealth" },
+  { name: "SuperNews", status: "Scaffold", href: "https://github.com/oversteintech/supernews" },
+  { name: "SuperSports", status: "Scaffold", href: "https://github.com/oversteintech/supersports" },
 ];
 
 export const standardHighlights = [

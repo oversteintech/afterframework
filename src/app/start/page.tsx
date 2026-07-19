@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { links, startSteps } from "@/data/content";
+import { links, startSteps, superAppFamily } from "@/data/content";
 
 export const metadata: Metadata = {
   title: "Get started",
@@ -39,6 +39,25 @@ ProviderContainer(overrides: [
   ...AfterFramework.createProductOverrides(prefs),
 ]);`}</pre>
 
+        <section className="mt-16">
+          <h2 className="display mb-6 text-2xl">Active Super Apps</h2>
+          <ul className="grid gap-3 sm:grid-cols-2">
+            {superAppFamily.map((app) => (
+              <li key={app.name}>
+                <a
+                  href={app.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="surface-card flex items-center justify-between px-5 py-4 text-sm transition-colors hover:border-accent/30"
+                >
+                  <span className="font-semibold">{app.name}</span>
+                  <span className="font-mono text-xs text-muted">{app.status}</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <div className="mt-10 flex flex-wrap gap-3">
           <a
             href={links.githubSuperCore}
@@ -48,14 +67,9 @@ ProviderContainer(overrides: [
           >
             SuperCore packages ↗
           </a>
-          <a
-            href={links.githubSuperHealth}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-ghost"
-          >
-            SuperHealth scaffold ↗
-          </a>
+          <Link href="/packages" className="btn btn-ghost">
+            Standard APIs
+          </Link>
           <a
             href={links.afterArtificial}
             target="_blank"
@@ -64,9 +78,6 @@ ProviderContainer(overrides: [
           >
             Super Apps ↗
           </a>
-          <Link href="/standard" className="btn btn-ghost">
-            Platform Standard
-          </Link>
         </div>
       </div>
     </main>
