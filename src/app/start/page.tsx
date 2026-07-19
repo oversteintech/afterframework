@@ -1,0 +1,66 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { links, startSteps } from "@/data/content";
+
+export const metadata: Metadata = {
+  title: "Get started",
+  description:
+    "How to add a new Super App on After Framework — packages, manifest, composition root, vertical features.",
+};
+
+export default function StartPage() {
+  return (
+    <main className="section-pad pt-28">
+      <div className="container-max">
+        <p className="eyebrow mb-4">Get started</p>
+        <h1 className="display mb-4 text-4xl md:text-5xl">
+          Add a Super App in four steps
+        </h1>
+        <p className="mb-14 max-w-2xl text-muted">
+          Example: SuperHealth. Depend on After packages, set the manifest, wire
+          adapters, ship vertical features only.
+        </p>
+
+        <ol className="space-y-4">
+          {startSteps.map((item) => (
+            <li key={item.step} className="surface-card flex gap-6 p-6 md:p-8">
+              <span className="font-mono text-sm text-accent">{item.step}</span>
+              <div>
+                <h2 className="text-lg font-semibold">{item.title}</h2>
+                <p className="mt-2 text-sm leading-relaxed text-muted">{item.body}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+
+        <pre className="code-block mt-12">{`AfterFramework.ensureConfigured();
+ProviderContainer(overrides: [
+  ...bootstrapOverrides,
+  ...AfterFramework.createProductOverrides(prefs),
+]);`}</pre>
+
+        <div className="mt-10 flex flex-wrap gap-3">
+          <a
+            href={links.afterArtificial}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-primary"
+          >
+            See Super Apps ↗
+          </a>
+          <a
+            href={links.overstein}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost"
+          >
+            Overstein Labs ↗
+          </a>
+          <Link href="/standard" className="btn btn-ghost">
+            Platform Standard
+          </Link>
+        </div>
+      </div>
+    </main>
+  );
+}
