@@ -13,6 +13,8 @@ export const links = {
   founder: "https://www.ayhanuzundal.com.tr",
   githubOrg: "https://github.com/oversteintech",
   githubFramework: "https://github.com/oversteintech/afterframework",
+  githubSuperCore: "https://github.com/oversteintech/supercore",
+  githubSuperHealth: "https://github.com/oversteintech/superhealth",
   superGarage: "https://www.afterartificial.com/#products",
 };
 
@@ -72,23 +74,23 @@ export const standardHighlights = [
 export const startSteps = [
   {
     step: "01",
-    title: "Depend on After packages",
-    body: "Add after_core and after_design_system to the Super App pubspec (path or published source).",
+    title: "Clone SuperCore next to your app",
+    body: "github.com/oversteintech/supercore — after_core + after_design_system. Sibling path: ../supercore/packages/*",
   },
   {
     step: "02",
     title: "Set AppPlatformManifest",
-    body: "Unique appId, package/bundle IDs, store flavors (play / dev / huawei).",
+    body: "Unique appId, package/bundle IDs, store flavors (play / dev / huawei). Lives in after_core PlatformConfig.",
   },
   {
     step: "03",
     title: "Create composition root",
-    body: "Mirror SuperGarage: AfterFramework.create*Overrides() + product adapters for auth, analytics, push, entitlements.",
+    body: "Mirror SuperHealth or SuperGarage: AfterFramework.create*Overrides() + product adapters for auth, analytics, push, entitlements.",
   },
   {
     step: "04",
     title: "Ship vertical features only",
-    body: "Business screens under lib/features/. Theme from AfterThemeData; accents via tokens.",
+    body: "Business screens under lib/features/. Theme from AfterThemeData; accents via tokens. Checklist on SuperCore repo.",
   },
 ];
 

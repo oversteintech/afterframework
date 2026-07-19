@@ -41,20 +41,28 @@ ProviderContainer(overrides: [
 
         <div className="mt-10 flex flex-wrap gap-3">
           <a
-            href={links.afterArtificial}
+            href={links.githubSuperCore}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-primary"
           >
-            See Super Apps ↗
+            SuperCore packages ↗
           </a>
           <a
-            href={links.overstein}
+            href={links.githubSuperHealth}
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-ghost"
           >
-            Overstein Labs ↗
+            SuperHealth scaffold ↗
+          </a>
+          <a
+            href={links.afterArtificial}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-ghost"
+          >
+            Super Apps ↗
           </a>
           <Link href="/standard" className="btn btn-ghost">
             Platform Standard

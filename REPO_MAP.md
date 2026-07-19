@@ -1,57 +1,47 @@
-# oversteintech — repo map & gaps
+# oversteintech — repo map (ready for Super Apps)
 
-Last audit: 2026-07-19
+Last update: 2026-07-19
 
-## Live sites (Vercel · team `overstein`)
-
-| Domain | Vercel project | GitHub | Status |
-|--------|----------------|--------|--------|
-| afterframework.com | `afterframework` | `oversteintech/afterframework` | ✅ Live |
-| afterartificial.com | `afterartificial-web` | `oversteintech/afterartificial-web` (private) | ✅ Live |
-| overstein.com | `overstein-web` | `oversteintech/overstein-web` (private) | ✅ Live |
-| ayhanuzundal.com.tr | `ayhan-portfolio` | local → `auzundal/ayhan-portfolio`; org copy stale | ⚠️ Sync needed |
-
-## Public GitHub (`oversteintech`)
-
-| Repo | Content | Gap |
-|------|---------|-----|
-| **afterframework** | Next.js docs site | ✅ Seeded & deployed |
-| **supercore** | Empty → README scaffold | Extract `after_*` packages from SuperGarage |
-| **superhealth** | Only `.gitignore` → README scaffold | Flutter Super App shell when ready |
-| **ayhan-portfolio** | Old static HTML (Jul 3) | Replace with Next.js from local `ayhan-portfolio` |
-
-## Private (exist via local remotes; not public API)
-
-| Repo | Local | Notes |
-|------|-------|-------|
-| **supergarage** | `D:\Projects\HANTURAI\supergarage` | Flagship + `packages/after_core` + `after_design_system` |
-| **overstein-web** | `C:\Users\a00929216\Projects\overstein-web` | Brand updates pending push |
-| **afterartificial-web** | `C:\Users\a00929216\Projects\afterartificial-web` | Brand updates pending push |
-
-## Missing repos (recommended)
-
-| Repo | Purpose |
-|------|---------|
-| `superfinance` | Future Super App placeholder |
-| `after-design-system` | Optional split if not using monolithic `supercore` |
-| `platform-standard` | Or keep docs only on afterframework.com + SuperGarage `/docs` |
-
-## Standardization before new apps
-
-1. ✅ afterframework.com live + linked in ecosystem
-2. ⬜ Push brand updates for overstein / afterartificial / ayhan Next sites
-3. ⬜ Populate `supercore` from SuperGarage packages (single source of truth)
-4. ⬜ SuperGarage consumes `supercore` (path or git dep)
-5. ⬜ SuperHealth scaffold from Platform Standard checklist
-6. ⬜ Sync `oversteintech/ayhan-portfolio` with Next.js portfolio
-7. ⬜ Retire/redirect Vercel `after-artificial` duplicate if unused
-
-## Brand hierarchy
+## Brand stack
 
 ```
-Ayhan Uzundal
-  └── AfterArtificial          afterartificial.com
+Ayhan Uzundal          → ayhanuzundal.com.tr
+  └── AfterArtificial  → afterartificial.com
         └── Super* Apps
-              └── After Framework   afterframework.com
-                    └── Overstein Labs   overstein.com
+              └── After Framework  → afterframework.com
+                    └── packages   → github.com/oversteintech/supercore
+                          └── Built by Overstein Labs → overstein.com
 ```
+
+## Live sites (Vercel)
+
+| Domain | Project | Repo |
+|--------|---------|------|
+| afterframework.com | afterframework | oversteintech/afterframework |
+| afterartificial.com | afterartificial-web | oversteintech/afterartificial-web |
+| overstein.com | overstein-web | oversteintech/overstein-web |
+| ayhanuzundal.com.tr | ayhan-portfolio | oversteintech/ayhan-portfolio |
+
+## Flutter / packages
+
+| Repo | Role | Status |
+|------|------|--------|
+| **supercore** | `after_core` + `after_design_system` | ✅ Source of truth |
+| **supergarage** | Flagship Super App | ✅ Consumes `../supercore` |
+| **superhealth** | Next Super App scaffold | ✅ Composition root + smoke tests |
+
+## Local workspace layout
+
+```text
+HANTURAI/
+  supercore/
+  supergarage/
+  superhealth/
+```
+
+## Next Super Apps
+
+1. Clone `supercore` as sibling
+2. `flutter create` + depend on `../supercore/packages/*`
+3. Copy composition pattern from SuperHealth / SuperGarage
+4. Follow [SUPER_APP_CHECKLIST](https://github.com/oversteintech/supercore/blob/main/SUPER_APP_CHECKLIST.md)
