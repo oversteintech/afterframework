@@ -9,7 +9,10 @@ export default function Navbar() {
         aria-label="Main"
       >
         <Link href="/" className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight">
-          <span className="flex h-7 w-7 items-center justify-center rounded-md border border-accent/30 bg-accent/10 text-[10px] text-accent">
+          <span
+            className="flex h-7 w-7 items-center justify-center rounded-md bg-accent text-[10px] font-bold tracking-tight text-[#041018] ring-1 ring-inset ring-[#041018]/25"
+            aria-hidden
+          >
             AF
           </span>
           {site.name}
