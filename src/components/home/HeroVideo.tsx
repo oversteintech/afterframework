@@ -23,10 +23,11 @@ export function HeroVideo() {
     <video
       ref={ref}
       className="hero-video"
+      autoPlay
       muted
       loop
       playsInline
-      preload="none"
+      preload="auto"
       poster="/videos/hero-waves-poster.webp"
       aria-hidden="true"
       tabIndex={-1}
