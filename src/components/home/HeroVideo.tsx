@@ -2,21 +2,15 @@
 
 import { useEffect, useRef } from "react";
 
-/** Decorative looping backdrop; stays on its poster frame when the user prefers reduced motion. */
+/** Decorative looping backdrop. */
 export function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const video = ref.current;
     if (!video) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const sync = () => {
-      if (reduce.matches) video.pause();
-      else video.play().catch(() => {});
-    };
-    sync();
-    reduce.addEventListener("change", sync);
-    return () => reduce.removeEventListener("change", sync);
+    video.muted = true;
+    video.play().catch(() => {});
   }, []);
 
   return (
@@ -28,7 +22,6 @@ export function HeroVideo() {
       loop
       playsInline
       preload="auto"
-      poster="/videos/hero-waves-poster.webp"
       aria-hidden="true"
       tabIndex={-1}
     >

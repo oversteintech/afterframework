@@ -345,7 +345,7 @@ samp {
   .hero-video-scrim {
     background:
       linear-gradient(to bottom, transparent 55%, var(--bg)),
-      color-mix(in oklab, var(--bg) 55%, transparent);
+      color-mix(in oklab, var(--bg) 30%, transparent);
   }
 
   .corner-marks {
