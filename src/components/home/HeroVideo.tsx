@@ -31,8 +31,7 @@ export function HeroVideo() {
       aria-hidden="true"
       tabIndex={-1}
     >
-      <source src="/videos/hero-waves.webm" type="video/webm" />
-      <source src="/videos/hero-waves.mp4" type="video/mp4" />
+      <source src="/videos/hero-background.mp4" type="video/mp4" />
     </video>
   );
 }
