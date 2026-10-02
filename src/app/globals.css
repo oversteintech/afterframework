@@ -329,6 +329,25 @@ samp {
     mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 40%, transparent 100%);
   }
 
+  /* Hero video backdrop: the source is light, so dark mode inverts it and rotates hue back to blue */
+  .hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-video:where([data-theme="dark"] *, :root:not([data-theme]) *) {
+    filter: invert(1) hue-rotate(180deg) saturate(1.3);
+  }
+
+  .hero-video-scrim {
+    background:
+      linear-gradient(to bottom, transparent 55%, var(--bg)),
+      color-mix(in oklab, var(--bg) 55%, transparent);
+  }
+
   .corner-marks {
     position: relative;
   }

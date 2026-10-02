@@ -4,6 +4,7 @@ import { Icon, type IconName } from "@/components/ui/Icon";
 import { dirFor, type Locale } from "@/i18n/config";
 import { localePath } from "@/i18n/paths";
 import type { Dictionary } from "@/i18n/types";
+import { HeroVideo } from "./HeroVideo";
 
 export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const h = dict.hero;
@@ -16,6 +17,10 @@ export function Hero({ locale, dict }: { locale: Locale; dict: Dictionary }) {
 
   return (
     <section aria-labelledby="hero-title" className="relative overflow-hidden">
+      <div className="pointer-events-none absolute inset-0" aria-hidden="true">
+        <HeroVideo />
+        <div className="hero-video-scrim absolute inset-0" />
+      </div>
       <div className="blueprint fade-mask pointer-events-none absolute inset-0" aria-hidden="true" />
       <div className="container-x relative grid items-center gap-12 pt-16 pb-20 lg:grid-cols-[1.05fr_1fr] lg:gap-10 lg:pt-24 lg:pb-28">
         <div>
